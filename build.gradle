@@ -30,16 +30,16 @@ repositories {
 }
 
 loom {
-	splitEnvironmentSourceSets()
+//	splitEnvironmentSourceSets()
 
 	mods {
-		"yeetlighting" {
-			sourceSet sourceSets.main
+		"burythelight" {
+//			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
 	}
 
-	accessWidenerPath = file("src/main/resources/yeetlighting.accesswidener")
+	accessWidenerPath = file("src/main/resources/burythelight.accesswidener")
 }
 
 dependencies {

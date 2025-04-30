@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "yeetlighting",
+	"id": "burythelight",
 	"version": "${version}",
-	"name": "YeetLighting",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "BuryTheLight",
+	"description": "Radioactive optimizations for your favorite block game.",
 	"authors": [
 		"Me!"
 	],
@@ -12,24 +12,20 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/yeetlighting/icon.png",
+	"icon": "assets/burythelight/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"main": [
-			"inspectorboat.yeetlighting.YeetLighting"
-		],
 		"client": [
-			"inspectorboat.yeetlighting.YeetLightingClient"
+			"inspectorboat.burythelight.BuryTheLightClient"
 		]
 	},
 	"mixins": [
-		"yeetlighting.mixins.json",
 		{
-			"config": "yeetlighting.client.mixins.json",
+			"config": "burythelight.mixins.json",
 			"environment": "client"
 		}
 	],
-	"accessWidener" : "yeetlighting.accesswidener",
+	"accessWidener" : "burythelight.accesswidener",
 	"depends": {
 		"fabricloader": ">=0.16.10",
 		"minecraft": "~1.21.4",
