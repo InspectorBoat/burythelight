@@ -5,3 +5,4 @@ accessible method net/minecraft/world/chunk/PalettedContainer getCompatibleData 
 accessible field net/minecraft/world/chunk/PalettedContainer data Lnet/minecraft/world/chunk/PalettedContainer$Data;
 accessible method net/minecraft/world/biome/Biome <init> (Lnet/minecraft/world/biome/Biome$Weather;Lnet/minecraft/world/biome/BiomeEffects;Lnet/minecraft/world/biome/GenerationSettings;Lnet/minecraft/world/biome/SpawnSettings;)V
 accessible method net/minecraft/world/biome/Biome$Weather <init> (ZFLnet/minecraft/world/biome/Biome$TemperatureModifier;F)V
+accessible method net/minecraft/client/texture/NativeImage setColor (III)V

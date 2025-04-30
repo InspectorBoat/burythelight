@@ -36,6 +36,8 @@ public class ChunkSectionMixin {
         var data = slice.getCompatibleData(slice.data, i);
         data.palette.readPacket(buf);
 
-        ByteBufUtils.discardLongs(buf, data.storage().getData().length);
+        ByteBufUtils.discardLongArray(buf);
+
+        ci.cancel();
     }
 }
