@@ -33,6 +33,7 @@ public class ByteBufUtils {
         final int length = buf.readVarInt();
         discardLongs(buf, length);
     }
+
     public static void discardLongs(PacketByteBuf buf, int longsToDiscard) {
         buf.readerIndex(buf.readerIndex() + longsToDiscard * 8);
     }

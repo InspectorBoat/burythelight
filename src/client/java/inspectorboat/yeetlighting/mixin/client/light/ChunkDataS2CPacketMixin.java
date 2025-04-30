@@ -14,7 +14,8 @@ public class ChunkDataS2CPacketMixin {
 	@WrapOperation(
 			at = @At(
 					value = "NEW",
-					target = "(Lnet/minecraft/network/PacketByteBuf;II)Lnet/minecraft/network/packet/s2c/play/LightData;"
+					target =
+"(Lnet/minecraft/network/PacketByteBuf;II)Lnet/minecraft/network/packet/s2c/play/LightData;"
 			),
 			method = "<init>(Lnet/minecraft/network/RegistryByteBuf;)V"
 	)

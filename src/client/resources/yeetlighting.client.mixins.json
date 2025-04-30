@@ -3,6 +3,7 @@
   "package": "inspectorboat.yeetlighting.mixin.client",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "SpriteOpenerMixin",
     "biome.ChunkBiomeDataS2CPacketMixin",
     "biome.ClientPlayNetworkHandlerMixin",
     "datafixer.BlockEntityTypeMixin",
@@ -25,6 +26,17 @@
   },
   "mixins": [
     "biome.ChunkSectionMixin",
-    "datafixer.DataFixTypesMixin"
+    "datafixer.DataFixTypesMixin",
+    "sodium.AbstractBlockRenderContextMixin",
+    "sodium.BlockRendererMixin",
+    "sodium.CompactChunkVertexMixin",
+    "sodium.DefaultFluidRendererMixin",
+    "sodium.DefaultShaderInterfaceMixin",
+    "sodium.FlatLightPipelineMixin",
+    "sodium.GlProgramMixin",
+    "sodium.LevelSliceMixin",
+    "sodium.ShaderChunkRendererMixin",
+    "sodium.ShaderLoaderMixin",
+    "sodium.ShaderParserMixin"
   ]
 }
