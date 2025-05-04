@@ -3,6 +3,8 @@
   "package": "inspectorboat.burythelight.mixin.client",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "flerovium.Item.TransformationMixin2",
+    "flerovium.Entity.EntityRendererMixin",
     "SpriteOpenerMixin",
     "biome.ChunkBiomeDataS2CPacketMixin",
     "biome.ClientPlayNetworkHandlerMixin",

@@ -32,12 +32,12 @@ repositories {
 loom {
 //	splitEnvironmentSourceSets()
 
-	mods {
-		"burythelight" {
+//	mods {
+//		"burythelight" {
 //			sourceSet sourceSets.main
-			sourceSet sourceSets.client
-		}
-	}
+//			sourceSet sourceSets.client
+//		}
+//	}
 
 	accessWidenerPath = file("src/main/resources/burythelight.accesswidener")
 }
@@ -49,8 +49,8 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
-    modCompileOnly "maven.modrinth:AANobbMI:DA250htH"
 	modCompileOnly "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modCompileOnly "maven.modrinth:AANobbMI:DA250htH"
 }
 
 processResources {
