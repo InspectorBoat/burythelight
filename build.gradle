@@ -49,9 +49,8 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
+    modCompileOnly "maven.modrinth:AANobbMI:DA250htH"
 	modCompileOnly "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-    modCompileOnly "maven.modrinth:AANobbMI:c3YkZvne"
 }
 
 processResources {
