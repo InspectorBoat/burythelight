@@ -51,6 +51,10 @@ public class BuryTheLightClient implements ClientModInitializer {
     public static int rgbToInt(int r, int g, int b) {
         return r << 0 | g << 8 | b << 16 | 255 << 24;
     }
+
+    public static void debug(int a, int b, int c) {
+//        if ()
+    }
     /*
 //     * bamboo_large_leaves
 //     * bamboo_small_leaves

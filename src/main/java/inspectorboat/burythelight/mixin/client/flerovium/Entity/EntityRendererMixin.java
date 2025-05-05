@@ -1,6 +1,7 @@
 package inspectorboat.burythelight.mixin.client.flerovium.Entity;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import inspectorboat.burythelight.BuryTheLightClient;
 import net.caffeinemc.mods.sodium.api.math.MatrixHelper;
 import net.caffeinemc.mods.sodium.client.render.immediate.model.EntityRenderer;
 import net.caffeinemc.mods.sodium.client.render.immediate.model.ModelCuboid;
@@ -114,7 +115,10 @@ public abstract class EntityRendererMixin {
         buildVertexTexCoord(VERTEX_TEXTURES[4], cuboid.u0, cuboid.v1, cuboid.u1, cuboid.v2);
 
         flerovium$FACE = ~0;
-        if (matrices.getPositionMatrix().m32() <= -16.0F && RenderSystem.getModelViewMatrix().m32() == 0) {
+        // This used to be `matrices.getPositionMatrix().m32() <= -16.0F && RenderSystem.getModelViewMatrix().m32() == 0
+        // but that seems to prevent culling from occurring
+        // Moral of the story: try random shit until it sticks
+        if (RenderSystem.getModelViewMatrix().m32() == 0) {
             Matrix3f normal = matrices.getNormalMatrix();
 
             float posX = c000x + c011x;
@@ -153,6 +157,7 @@ public abstract class EntityRendererMixin {
 
     @Redirect(method = "emitQuads", at = @At(value = "INVOKE", target = "Lnet/caffeinemc/mods/sodium/client/render/immediate/model/ModelCuboid;shouldDrawFace(I)Z"))
     private static boolean onShouldDrawFace(ModelCuboid cuboid, int face) {
+        BuryTheLightClient.debug(flerovium$FACE, face, flerovium$FACE & (1 << face));
         return (flerovium$FACE & (1 << face)) != 0 && cuboid.shouldDrawFace(face);
     }
 }
