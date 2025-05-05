@@ -114,7 +114,7 @@ public abstract class EntityRendererMixin {
         buildVertexTexCoord(VERTEX_TEXTURES[4], cuboid.u0, cuboid.v1, cuboid.u1, cuboid.v2);
 
         flerovium$FACE = ~0;
-        if (matrices.getPositionMatrix().m32() <= -16.0F && RenderSystem.getModelViewMatrix().m32() == 0) {
+        if (RenderSystem.getModelViewMatrix().m32() == 0) {
             Matrix3f normal = matrices.getNormalMatrix();
 
             float posX = c000x + c011x;
