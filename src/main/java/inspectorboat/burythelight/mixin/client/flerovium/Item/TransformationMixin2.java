@@ -17,19 +17,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 //import static net.neoforged.neoforge.common.util.TransformationHelper.quatFromXYZ;
 
 
-@Mixin(value = Transformation.class, remap = false)
+@Mixin(value = Transformation.class)
 public abstract class TransformationMixin2 {
     @Final
-    @Mutable
     @Shadow
+    @Mutable
     private Vector3fc rotation;
     @Final
+    @Shadow
     @Mutable
-    @Shadow(remap = false)
     private Vector3fc translation;
     @Final
+    @Shadow
     @Mutable
-    @Shadow(remap = false)
     private Vector3fc scale;
 
     @Unique
@@ -42,9 +42,9 @@ public abstract class TransformationMixin2 {
     public void init(Vector3fc rotation, Vector3fc translation, Vector3fc scale, CallbackInfo ci) {
         MatrixStack.Entry entry = new MatrixStack.Entry();
         if ((Object) this != Transformation.IDENTITY) {
-            entry.translate(this.translation.x(), this.translation.y(), this.translation.z());
-            entry.rotate((new Quaternionf()).rotationXYZ(this.rotation.x() * 0.017453292F, this.rotation.y() * 0.017453292F, this.rotation.z() * 0.017453292F));
-            entry.scale(this.scale.x(), this.scale.y(), this.scale.z());
+            entry.translate(translation.x(), translation.y(), translation.z());
+            entry.rotate((new Quaternionf()).rotationXYZ(rotation.x() * 0.017453292F, rotation.y() * 0.017453292F, rotation.z() * 0.017453292F));
+            entry.scale(scale.x(), scale.y(), scale.z());
         }
         entry.translate(-0.5F, -0.5F, -0.5F);
         matrix = entry.getPositionMatrix();
